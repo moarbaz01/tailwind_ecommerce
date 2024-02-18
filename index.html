@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopCart : a full responsive shopping site</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/6fc92de75b.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="overflow-x-hidden" id="wrapper">
+        <div class=" flex flex-col">
+
+            <!-- Header -->
+
+            <header class="bg-gray-100 w-full z-40 fixed">
+                <div class="flex  items-center justify-between px-10 bg-white  p-2">
+                    <div class="flex items-center gap-4">
+                        <i class="pt-1 fa-solid fa-truck-fast text-2xl"></i>
+                        <h1 class="text-3xl font-bold">Shop<span class="text-red-500">Cart</span></h1>
+                    </div>
+                    <ul id="nav" class="flex text-20px p-2 font-semibold items-center gap-6">
+                        <li class="hover:text-sky-700"><a class="flex items-center gap-2" href="#">Category <i
+                                    class="fa-solid fa-angle-up text-sm pt-1"></i></a></li>
+                        <li><a href="#">Deals</a></li>
+                        <li><a href="#">What's New</a></li>
+                        <li><a href="#">Delivery</a></li>
+
+                    </ul>
+                    <span class="flex items-center relative">
+                        <input type="text" placeholder="Search product"
+                            class="rounded-2xl outline-none pl-4 pr-4 pt-1 pb-1 border w-80">
+                        <i class="fa-solid fa-magnifying-glass absolute right-4 text-lg"></i>
+                    </span>
+                    <div class="flex items-center gap-8">
+                        <span class="flex items-center cursor-pointer gap-4"><i class="fa-solid fa-user"></i> Account</span>
+                        <span class="flex items-center cursor-pointer gap-4"><i class="fa-solid fa-cart-arrow-down"></i><a href="/cart_list.html">Cart</a></span>
+
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Page  -->
+
+            <section class="mt-20 mx-8">
+                <div class="bg-zinc-200 h-96 rounded-2xl py-72 max-w-7xl m-auto relative  flex justify-evenly items-center">
+                    <div class="flex items-start flex-col gap-2 pl-20">
+                        <img class="h-6  " src="https://seeklogo.com/images/B/boat-logo-F99CE766FA-seeklogo.com.png"
+                            alt="">
+                        <h2 class="text-black text-5xl font-bold">Wireless</h2>
+                        <h1 style="font-size: 10rem;" class="text-white font-extrabold">HEADPHONE</h1>
+                        <div></div>
+                        <button class="bg-red-500 rounded-full text-white px-4 py-1 mt-2">Shop by category</button>
+                    </div>
+                    <!-- <div class="flex flex-col items-end mt-52 w-46 h-20">
+                            <span class="text-black font-bold text-sm pr-10">Description</span>
+                            <p class="align-middle text-xs px-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quasi, necessitatibus sequi, doloribus nesciunt animi deserunt voluptas qui ?</p>
+                    </div> -->
+                    <img class="absolute h-fit top-5 right-40%" src="./images/headphone-hp.png" alt="">
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+
+            <section class=" my-8 mx-8">
+                <div class="flex flex-col max-w-7xl m-auto gap-4">
+                    <div class="flex items-center gap-6">
+                        <div style="background-size: 8rem;"
+                            class="flex flex-col text-white pt-20 bg-no-repeat bg-right-top bg-[url('./images/earphone.png')] bg-gray-600 h-64 w-56 px-5 items-start rounded-2xl">
+                            <span>Enjoy</span>
+                            <h2 class=" text-xl font-bold">With</h2>
+                            <h1 class=" text-3xl opacity-50 font-extrabold">EARPHONE</h1>
+                            <button class="bg-red-500 rounded-2xl text-sm text-white py-1 px-4 mt-2">Browse</button>
+                        </div>
+                        <div style="background-size: 8rem;"
+                            class="flex flex-col text-white pt-20 bg-no-repeat bg-right-top bg- bg-[url('./images/watch.png')] bg-yellow-400 h-64 w-56 px-5 items-start rounded-2xl">
+                            <span>Enjoy</span>
+                            <h2 class=" text-xl font-bold">With</h2>
+                            <h1 class=" text-2xl opacity-50 font-extrabold">WATCH</h1>
+                            <button class="bg-white rounded-2xl text-sm text-yellow-400 py-1 px-4 mt-2">Browse</button>
+                        </div>
+                        <div
+                            class="flex flex-col text-white  pt-12 bg-right-top flex-1 bg-no-repeat bg-contain bg- bg-[url('./images/laptop.png')] bg-red-400 h-64 w-52 pl-20 items-start rounded-2xl">
+                            <span>Trend</span>
+                            <h2 class=" text-xl font-bold">Devices</h2>
+                            <h1 class=" text-6xl opacity-50 font-extrabold">LAPTOP</h1>
+                            <button class="bg-white rounded-2xl text-sm text-red-500 py-1 px-4 mt-2">Browse</button>
+                        </div>
+
+
+                    </div>
+
+                    <div class="flex items-center mt-2 gap-6">
+                        <div
+                            class="flex flex-col text-white flex-1 bg-right-bottom bg-no-repeat bg-contain bg- bg-[url('./images/console.png')] bg-gray-200 h-64 w-56 pl-20 pt-12 items-start rounded-2xl">
+                            <span class="text-black">Best</span>
+                            <h2 class="  text-black text-xl font-bold">Gaming</h2>
+                            <h1 class=" text-6xl opacity-100 font-extrabold">CONSOLE</h1>
+                            <button class="bg-red-500 rounded-2xl text-sm text-white py-1 px-4 mt-2">Browse</button>
+                        </div>
+                        <div style="background-size: 8rem;"
+                            class="flex text-white pt-5 flex-col bg-no-repeat bg-right-bottom bg- bg-[url('./images/earbud.png')] bg-green-400 h-64 w-56 px-5 items-start  rounded-2xl">
+                            <span class="">Enjoy</span>
+                            <h2 class=" text-xl font-bold">With</h2>
+                            <h1 class=" text-2xl opacity-50 font-extrabold">EARBUDS</h1>
+                            <button class="bg-white rounded-2xl text-sm text-green-400 py-1 px-4 mt-2">Browse</button>
+                        </div>
+                        <div style="background-size: 8rem;"
+                            class="flex  text-white pt-5 flex-col bg-right-bottom bg-no-repeat  bg-[url('./images/speaker.png')] bg-blue-400 border h-64 w-56 px-5 items-start rounded-2xl">
+                            <span>New</span>
+                            <h2 class=" text-xl font-bold">Amazon</h2>
+                            <h1 class=" text-2xl opacity-50 font-extrabold">SPEAKER</h1>
+                            <button class="bg-white rounded-2xl text-sm text-blue-400 py-1 px-4 mt-2">Browse</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- Instructions or Speciality -->
+            <div class="mx-8 my-12">
+                <div class="flex items-center max-w-7xl m-auto justify-around ">
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid text-4xl text-red-500 fa-truck"></i>
+                        <div>
+                            <h2 class="text-sm font-bold">Free Shipping</h2>
+                            <span class="text-gray-500 text-xs opacity-60 font-bold">Free Shipping On All Order</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid text-4xl text-red-500 fa-money-bill-wheat"></i>
+                        <div>
+                            <h2 class="text-sm font-bold">Money Gaurantee</h2>
+                            <span class="text-gray-500 text-xs opacity-60 font-bold">30 Days Money Back</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid text-4xl text-red-500 fa-headphones-simple"></i>
+                        <div>
+                            <h2 class="text-sm font-bold">Online Support 24/7</h2>
+                            <span class="text-gray-500 text-xs opacity-60 font-bold">Technical Support 24/7</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fa-regular text-4xl text-red-500 fa-credit-card"></i>
+                        <div>
+                            <h2 class="text-sm font-bold">Secure Payment</h2>
+                            <span class="text-gray-500 text-xs opacity-60 font-bold">All Payment Methods</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Small Banner -->
+
+            <section class="mt-36 mb-12 mx-8">
+                <div class="flex items-center max-w-7xl m-auto relative justify-between px-12 py-12 bg-red-500 rounded-2xl ">
+                    <div class="flex flex-col items-start pl-10 text-white">
+                        <span class="text-sm">20 % OFF</span>
+                        <h1 class="text-6xl font-extrabold">DOLBY</h1>
+                        <h1 class="text-6xl font-extrabold">ATMOS</h1>
+                        <span class="text-sm">50 Nov to 7 Dec</span>
+                    </div>
+
+                    <div class="flex items-start flex-col pr-32 text-white">
+                        <span>Beats Solo Air</span>
+                        <h1 class="text-4xl font-extrabold">Summer Sale</h1>
+                        <p class="text-sm my-4 w-64">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Architecto ipsa, quae adipisci explicabo deleniti eius! </p>
+                        <button class="bg-white text-black mt-4 px-10 rounded-2xl">Shop</button>
+                    </div>
+
+                    <img class="absolute left-52 -top-28 h-96 " src="./images/headphone.png" alt="">
+
+
+                </div>
+            </section>
+
+            <!-- Products  -->
+
+
+            <section class="mx-8 my-8">
+                <div class="flex items-center flex-col gap-2">
+                    <div class="text-center">
+                        <h1 class="text-black text-4xl font-bold">Best Seller Products</h1>
+                        <p class="opacity-40">There are many variation passages</p>
+                    </div>
+
+                    <div class="flex items-center gap-12 my-12 justify-around">
+                        <div title="/Products/earphone" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/earphone1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name">Boat Earphone</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold text-lg price">25</h1>
+                                </span> 
+                            </div>
+                        </div>
+                        <div title="/Products/watch" class="flex flex-col product  items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/watch1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name">Fire Watch</h2>
+                               <span class="flex items-center">
+                                <h2>$</h2>
+                                <h1 class="font-bold text-lg price ">65</h1>
+                               </span> 
+                            </div>
+                        </div>
+                        <div title="/Products/2headphone" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/2headphone1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name ">Boat Headphone</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold text-lg price">27</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                        <div title="/Products/earbuds" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/earbuds0.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name ">Earbuds</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold text-lg price ">357</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-12 my-12 justify-around">
+                        <div title="/Products/2watch" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/2watch1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name ">Firebold Watch</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold text-lg price">85</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                        <div title="/Products/speaker" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/speaker1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name ">Speaker</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold text-lg price">45</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                        <div title="/Products/headphone" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 productImage hover:scale-125 transition" src="./Products/headphone1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name">Headphone</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold price text-lg">47</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                        <div title="/Products/2earbuds" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 productImage hover:scale-125 transition" src="./Products/2earbuds0.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name">White Earbuds</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold price text-lg">327</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </section>
+
+            <!-- Small Banner -->
+            <section class="mt-36 mb-12 mx-8">
+                <div class="flex items-center relative justify-between px-12 py-12 bg-green-500 rounded-2xl max-w-7xl m-auto ">
+                    <div class="flex flex-col items-start pl-10 text-white">
+                        <span class="text-sm">20 % OFF</span>
+                        <h1 class="text-6xl font-extrabold">HAPPY</h1>
+                        <h1 class="text-6xl font-extrabold">LISTEN</h1>
+                        <span class="text-sm">50 Nov to 7 Dec</span>
+                    </div>
+
+                    <div class="flex items-start flex-col pr-32 text-white">
+                        <span>Beats Solo Air</span>
+                        <h1 class="text-4xl font-extrabold">Summer Sale</h1>
+                        <p class="text-sm my-4 w-64">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Architecto ipsa, quae adipisci explicabo deleniti eius! </p>
+                        <button class="bg-white text-black mt-4 px-10 rounded-2xl">Shop</button>
+                    </div>
+
+                    <img class="absolute left-48 -top-28 h-96 " src="./Products/earbuds0.png" alt="">
+
+
+                </div>
+            </section>
+
+            <!-- Recent News -->
+
+            <section class="mx-8 my-14">
+                <div class="flex items-center flex-col gap-2">
+                    <div class="text-center">
+                        <h1 class="text-black text-4xl font-bold">Best of 2023</h1>
+                        <p class="opacity-40">There are many variation passages</p>
+                    </div>
+
+                    <div id="Products" class="flex items-center gap-12 my-12 justify-around">
+                        <div title="/Products/earphone" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/earphone1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name">Boat Earphone</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold text-lg price">25</h1>
+                                </span> 
+                            </div>
+                        </div>
+                        
+                        <div title="/Products/watch" class="flex flex-col product  items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/watch1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name">Fire Watch</h2>
+                               <span class="flex items-center">
+                                <h2>$</h2>
+                                <h1 class="font-bold text-lg price ">65</h1>
+                               </span> 
+                            </div>
+                        </div>
+
+                        <div title="/Products/2headphone" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/2headphone1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name ">Boat Headphone</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold text-lg price">27</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                        
+                        <div title="/Products/2earbuds" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 productImage hover:scale-125 transition" src="./Products/2earbuds0.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name">White Earbuds</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold price text-lg">327</h1>
+                                   </span> 
+                            </div>
+                        </div>
+
+
+                    </div>
+            </section>
+
+            <!-- Brands -->
+
+            <div>
+                <div class="flex items-center justify-around bg-zinc-200 p-12">
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://seeklogo.com/images/B/boat-logo-F99CE766FA-seeklogo.com.png" alt=""></li>
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/de/AsusTek-black-logo.png" alt="">
+                    </li>
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://1000logos.net/wp-content/uploads/2021/05/Sony-logo.png" alt=""></li>
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Fastrack_logo.png" alt=""></li>
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://www.freepnglogos.com/uploads/puma-logo-png-1.png" alt=""></li>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+
+            <footer class="py-4 bg-white">
+                <div class="p-12 flex justify-around">
+                    <div  class="flex flex-col items-start w-52 gap-4">
+                        <div class="flex items-center gap-2">
+                            <i class="pt-1 fa-solid fa-truck-fast text-sm"></i>
+                            <h1 class="text-sm font-bold">ShopCart</h1>
+                        </div>
+                        <div>
+                            <p class="opacity-40">There are many variations of passages Lorem ipsum available. but the majority have.</p>
+                        </div>
+                        <div class="flex gap-2 opacity-40 items-center">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col w-52 gap-4 items-start">
+                        <h1 class="text-sm font-bold">Quick Links</h1>
+                        <ul class="flex flex-col items-start">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col w-52 gap-4 items-start">
+                        <h1 class="text-sm font-bold">Contact</h1>
+                        <div class="flex flex-col items-start">
+                            +9129466464 , Gopalpura-Hanuman ji ka rasta , udaipur rajasthan
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start">
+                        <h1 class="text-sm font-bold">Subscribe To Our Email</h1>
+                        <h1 class="text-2xl font-bold">For Latest News & Updates</h1>
+                        <div class="flex items-center relative">
+                            <input type="text" placeholder="Enter email" class="outline-none rounded-2xl px-14 py-2 bg-zinc-200">
+                            <button  class=" absolute -right-5 rounded-2xl bg-red-500 text-white p-2  text-xs">Subscribe</button>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </footer>
+
+            <!-- Last Footer -->
+
+            <div>
+                <div class="flex text-white bg-black px-12 py-2 items-center justify-between">
+                    <span class="opacity-50">@2019 shop-digital-All Rights Reserved ABR</span>
+                    <h1 class="text-2xl">www.abr.portfolio.com</h1>
+                    <span class="flex items-center gap-4">
+                        <a class="text-white opacity-50" href="">Privacy Policy</a>
+                        <a class="text-white opacity-50" href="">Terms Condition</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

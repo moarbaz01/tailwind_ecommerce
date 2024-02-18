@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/6fc92de75b.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="loadcart()" class="bg-gray-100">
+    <div class="overflow-x-hidden" id="wrapper">
+        <div class=" flex flex-col">
+
+            <!-- Header -->
+
+            <header class="bg-gray-100 w-full z-20 fixed">
+                <div class="flex  items-center justify-between px-10 bg-white  p-2">
+                    <div class="flex items-center gap-4">
+                        <i class="pt-1 fa-solid fa-truck-fast text-2xl"></i>
+                        <h1 class="text-3xl font-bold">Shop<span class="text-red-500">Cart</span></h1>
+                    </div>
+                    <ul id="nav" class="flex text-20px p-2 font-semibold items-center gap-6">
+                        <li class="hover:text-sky-700"><a class="flex items-center gap-2" href="#">Category <i
+                                    class="fa-solid fa-angle-up text-sm pt-1"></i></a></li>
+                        <li><a href="#">Deals</a></li>
+                        <li><a href="#">What's New</a></li>
+                        <li><a href="#">Delivery</a></li>
+
+                    </ul>
+                    <span class="flex items-center relative">
+                        <input type="text" placeholder="Search product"
+                            class="rounded-2xl outline-none pl-4 pr-4 pt-1 pb-1 border w-80">
+                        <i class="fa-solid fa-magnifying-glass absolute right-4 text-lg"></i>
+                    </span>
+                    <div class="flex items-center gap-8">
+                        <span class="flex items-center gap-4"><i class="fa-solid fa-user"></i> Account</span>
+                        <span class="flex items-center  gap-4"><i class="fa-solid fa-cart-arrow-down"></i>Cart</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Products Show Page -->
+
+            <section class="mt-20 mb-8">
+                <div class="flex gap-8  max-w-7xl m-auto px-8  py-8">
+                    <div class="flex flex-[1] items-start gap-2">
+
+                        <div class="flex items-center flex-col justify-between gap-2">
+                            <img onmouseenter="imageChange(this.src)" class="bg-zinc-100 border-4 productSmallImage p-2 rounded-2xl h-24"
+                              src=""   alt="">
+                            <img onmouseenter="imageChange(this.src)" class="bg-zinc-100 border-4 productSmallImage p-2 rounded-2xl h-24"
+                              src=""   alt="">
+                            <img onmouseenter="imageChange(this.src)" class="bg-zinc-100 border-4 productSmallImage p-2 rounded-2xl h-24"
+                              src=""   alt="">
+                            <img onmouseenter="imageChange(this.src)" class="bg-zinc-100 border-4 productSmallImage p-2 rounded-2xl h-24"
+                               src=""  alt="">
+                        </div>
+
+                        <div class=" p-8 bg-zinc-100 border-4 rounded-2xl">
+                            <img id="productBigImg" class=" productFirstImage h-96" src="" alt="">
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-col items-start pl-10 gap-4">
+                        <div class="flex gap-2 items-center">
+                            <span class="flex gap-2 items-center"><i
+                                    class="fa-sharp text-yellow-500 fa-solid fa-star"></i>
+                                <h1 class="font-bold">4.9</h1> |
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <h1>30 reviews</h1><i class="fa-solid fa-circle-check" style="color: #08af48;"></i>
+                            </span>
+                        </div>
+
+
+                        <h1 class="text-5xl font-bold productName">Boat Headphone</h1>
+                        <div class="h-1 w-24 bg-red-500"></div>
+                        <!-- <h2 class="text-white px-6 text-sm bg-black">Visit Boat Store</h2> -->
+                        <p class="w-96">Over Ear Bluetooth Headphones with Upto 15 Hours Playback, Adaptive Headband,
+                            40mm Dynamic Driver, 300 mah Battery</p>
+                        <h1 class="font-bold text-red-500 flex items-center gap-2 text-3xl">
+                            <span class="line-through  text-lg text-zinc-300 pr-4">$8849</span>
+                            <div class="flex items-center">
+                                <i>$</i>
+                                <h2 class="text-red-500  text-3xl font-bold productPrice">7357</h2>
+                            </div>
+                        </h1>
+
+
+                        <hr class="bg-black">
+
+
+                        <div class="flex flex-col items-start gap-4">
+
+                            <h2 class="text-lg">Quantity : </h2>
+
+                            <div class="flex items-center bg-zinc-100 py-1 px-4 rounded-xl border-4 gap-4">
+                                <span onclick="decrement(-1)" class="px-2 rounded-2xl"><i
+                                        class="fa-solid text-xs fa-minus"></i></span>
+                                <span id="quantity" class="select-none text-xl">1</span>
+                                <span onclick="increment(+1)" class="px-2 rounded-2xl"><i
+                                        class="fa-solid text-xs fa-plus"></i></span>
+                            </div>
+
+                            <div class="flex flex-col mt-2 gap-2">
+                                <button id="add-to-cart-btn" class="bg-red-500 py-2 px-32 text-center text-white rounded-xl">Add to
+                                    cart</button>
+                                <button class="text-white py-2 px-36 text-center bg-black rounded-xl">Buy Now</button>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </section>
+
+            <!-- Instructions or Speciality -->
+            <div class="mx-8 my-12">
+                <div class="flex items-center max-w-7xl m-auto justify-around ">
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid text-4xl text-red-500 fa-truck"></i>
+                        <div>
+                            <h2 class="text-sm font-bold">Free Shipping</h2>
+                            <span class="text-gray-500 text-xs opacity-60 font-bold">Free Shipping On All Order</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid text-4xl text-red-500 fa-money-bill-wheat"></i>
+                        <div>
+                            <h2 class="text-sm font-bold">Money Gaurantee</h2>
+                            <span class="text-gray-500 text-xs opacity-60 font-bold">30 Days Money Back</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid text-4xl text-red-500 fa-headphones-simple"></i>
+                        <div>
+                            <h2 class="text-sm font-bold">Online Support 24/7</h2>
+                            <span class="text-gray-500 text-xs opacity-60 font-bold">Technical Support 24/7</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fa-regular text-4xl text-red-500 fa-credit-card"></i>
+                        <div>
+                            <h2 class="text-sm font-bold">Secure Payment</h2>
+                            <span class="text-gray-500 text-xs opacity-60 font-bold">All Payment Methods</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Small Banner -->
+            <!-- <section class="mt-36">
+                <div class="flex items-center relative justify-between px-12 py-12 bg-red-500 rounded-2xl my-12 mx-8">
+                    <div class="flex flex-col items-start pl-10 text-white">
+                        <span class="text-sm">20 % OFF</span>
+                        <h1 class="text-6xl font-extrabold">DOLBY</h1>
+                        <h1 class="text-6xl font-extrabold">ATMOS</h1>
+                        <span class="text-sm">50 Nov to 7 Dec</span>
+                    </div>
+
+                    <div class="flex items-start flex-col pr-32 text-white">
+                        <span>Beats Solo Air</span>
+                        <h1 class="text-4xl font-extrabold">Summer Sale</h1>
+                        <p class="text-sm my-4 w-64">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Architecto ipsa, quae adipisci explicabo deleniti eius! </p>
+                        <button class="bg-white text-black mt-4 px-10 rounded-2xl">Shop</button>
+                    </div>
+
+                    <img class="absolute left-52 -top-28 h-96 " src="./images/headphone.png" alt="">
+
+
+                </div>
+            </section> -->
+
+            <!-- Products -->
+
+            <section class="mx-8 my-14">
+                <div class="flex items-center flex-col gap-2">
+                    <div class="text-center">
+                        <h1 class="text-black text-4xl font-bold">Best of 2023</h1>
+                        <p class="opacity-40">There are many variation passages</p>
+                    </div>
+
+                    <div id="Products" class="flex items-center gap-12 my-12 justify-around">
+                        <div title="/Products/2watch" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/2watch1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name ">Firebold Watch</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold text-lg price">85</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                        <div title="/Products/speaker" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 hover:scale-125 transition productImage " src="./Products/speaker1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name ">Speaker</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold text-lg price">45</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                        <div title="/Products/headphone" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 productImage hover:scale-125 transition" src="./Products/headphone1.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name">Headphone</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold price text-lg">47</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                        <div title="/Products/2earbuds" class="flex flex-col product items-start">
+                            <div class="bg-zinc-100 rounded-2xl p-10 ">
+                                <img class="h-40 w-40 productImage hover:scale-125 transition" src="./Products/2earbuds0.png" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <h2 class="text-lg name">White Earbuds</h2>
+                                <span class="flex items-center">
+                                    <h2>$</h2>
+                                    <h1 class="font-bold price text-lg">327</h1>
+                                   </span> 
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <!--  -->
+
+            <!-- Brands -->
+
+            <div>
+                <div class="flex items-center justify-around bg-zinc-200 p-12">
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://seeklogo.com/images/B/boat-logo-F99CE766FA-seeklogo.com.png" alt=""></li>
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/de/AsusTek-black-logo.png" alt="">
+                    </li>
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://1000logos.net/wp-content/uploads/2021/05/Sony-logo.png" alt=""></li>
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Fastrack_logo.png" alt=""></li>
+                    <li class="list-none"><img class="h-6 brightness-0 opacity-50  "
+                            src="https://www.freepnglogos.com/uploads/puma-logo-png-1.png" alt=""></li>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+
+            <footer class="py-4 bg-white">
+                <div class="p-12 flex justify-around">
+                    <div class="flex flex-col items-start w-52 gap-4">
+                        <div class="flex items-center gap-2">
+                            <i class="pt-1 fa-solid fa-truck-fast text-sm"></i>
+                            <h1 class="text-sm font-bold">ShopCart</h1>
+                        </div>
+                        <div>
+                            <p class="opacity-40">There are many variations of passages Lorem ipsum available. but the
+                                majority have.</p>
+                        </div>
+                        <div class="flex gap-2 opacity-40 items-center">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col w-52 gap-4 items-start">
+                        <h1 class="text-sm font-bold">Quick Links</h1>
+                        <ul class="flex flex-col items-start">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col w-52 gap-4 items-start">
+                        <h1 class="text-sm font-bold">Contact</h1>
+                        <div class="flex flex-col items-start">
+                            +9129466464 , Gopalpura-Hanuman ji ka rasta , udaipur rajasthan
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start">
+                        <h1 class="text-sm font-bold">Subscribe To Our Email</h1>
+                        <h1 class="text-2xl font-bold">For Latest News & Updates</h1>
+                        <div class="flex items-center relative">
+                            <input type="text" placeholder="Enter email"
+                                class="outline-none rounded-2xl px-14 py-2 bg-zinc-200">
+                            <button
+                                class=" absolute -right-5 rounded-2xl bg-red-500 text-white p-2  text-xs">Subscribe</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </footer>
+
+            <!-- Last Footer -->
+
+
+            <div>
+                <div class="flex text-white bg-black px-12 py-2 items-center justify-between">
+                    <span class="opacity-50">@2019 shop-digital-All Rights Reserved ABR</span>
+                    <h1 class="text-2xl">www.abr.portfolio.com</h1>
+                    <span class="flex items-center gap-4">
+                        <a class="text-white opacity-50" href="">Privacy Policy</a>
+                        <a class="text-white opacity-50" href="">Terms Condition</a>
+                    </span>
+                </div>
+            </div>
+
+
+            <!--  -->
+            
+            <div id="shoppingCartPage" class=" hidden fixed h-full w-full overflow-auto top-0 bottom-0 bg-white z-50">
+                <section class="mt-2">
+                    <div class="flex flex-col max-w-7xl m-auto py-8 px-8">
+                        <div class="flex gap-4 justify-between items-center">
+        
+                            <div class="flex items-center gap-2">
+                                <h1 class="text-6xl font-bold">My Cart</h1>
+                                <!-- <h1 class="text-2xl">(<span>1</span> <span>Items</span>)</h1> -->
+                            </div>
+        
+                            <a onclick="continueShoppingBtn()"  class="flex items-center gap-4 text-black text-lg" href="#">
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                                <span>Continue Shopping</span>
+                            </a>
+        
+                        </div>
+        
+                        <table class="mt-8 border-collapse">
+                            <thead class="border-b-2">
+        
+                                <tr class="h-12">
+                                    <th class="text-left pl-8 w-1/2">Product Details</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                </tr>
+        
+                            </thead>
+        
+                            <tbody class="cart-items-container">
+                               
+                               
+                            </tbody>
+                        </table>
+        
+                        <!-- Payment Table -->
+        
+                        <div class="flex justify-between items-start bg-zinc-200 mt-20 py-6 px-8 rounded-2xl">
+                            <div>
+                                <h1 class="font-bold text-2xl">Choose shipping mode</h1>
+                                <div class="mt-6 flex flex-col gap-4">
+                                    <div class='flex gap-4 items-center'>
+                                        <input name="checkPM" type="radio">
+                                        <h2>Online Payment <span>( Delivery Free )</span> </h2>
+                                    </div>
+        
+                                    <div class='flex gap-4 items-center'>
+                                        <input name="checkPM" type="radio">
+                                        <h2>Cash on delivery <span>( Delivery Fees = 50$ )</span> </h2>
+                                    </div>
+        
+                                </div>
+                            </div>
+        
+                            <div class="flex justify-between w-80 gap-4 flex-col">
+                                <div class="flex justify-between items-center">
+                                    <span>SUBTOTAL TTC</span>
+                                    <h2 class="flex items-center">
+                                        <span>$</span>
+                                        <span>746</span>
+                                    </h2>
+                                </div>
+                                <div class="flex justify-between items-center ">
+                                    <span>SHIPPING</span>
+                                    <span>FREE</span>
+                                </div>
+        
+                                <div class="flex justify-between items-center">
+                                    <span>TOTAL</span>
+                                    <h2 class="flex items-center">
+                                        <span>$</span>
+                                        <span>746</span>
+                                    </h2>
+                                </div>
+        
+                                <div class="bg-red-500 rounded-2xl flex items-center justify-between py-2 px-4 text-white">
+                                    <h1 class="text-2xl font-bold">Checkout</h1>
+                                    <h2 class="flex items-center">
+                                        <span>$</span>
+                                        <span class="totalPriceOnCheckout">746</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+        
+        
+        
+                    </div>
+                </section>
+            </div>
+
+        
+
+        </div>
+    </div>
+
+   
+
+    <script src="script.js"></script>
+    <script src="addToCart.js"></script>
+    <script src="cart.js"></script>
+    
+    
+</body>
+
+</html>
